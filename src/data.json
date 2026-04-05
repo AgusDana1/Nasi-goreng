@@ -1,0 +1,137 @@
+{
+    "businessName": "Warung Arema",
+    "menu": [
+        {
+            "id": 1,
+            "name": "Nasi Goreng Biasa",
+            "price": 13000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 2,
+            "name": "Nasi Goreng Mawut",
+            "price": 14000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 3,
+            "name": "Nasi Goreng Bakso",
+            "price": 18000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 4,
+            "name": "Nasi Goreng Sosis",
+            "price": 18000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 5,
+            "name": "Nasi Goreng Bakso + Sosis",
+            "price": 18000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 6,
+            "name": "Nasi Goreng Ampela Ati",
+            "price": 20000,
+            "images": "/images/nasgor-spesial.jpg"
+        },
+
+        {
+            "id": 7,
+            "name": "Nasi Goreng Seafood",
+            "price": 20000,
+            "images": "/images/nasgor-seafood.jpeg"
+        },
+
+        {
+            "id": 8,
+            "name": "Nasi Goreng Komplit",
+            "price": 25000,
+            "images": "/images/nasgor-seafood.jpeg"
+        },
+
+        {
+            "id": 9,
+            "name": "Bakmi Goreng",
+            "price": 13000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 10,
+            "name": "Bakmi Kuah",
+            "price": 13000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 11,
+            "name": "Bakmi Goreng Bakso + Sosis",
+            "price": 18000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 12,
+            "name": "Bakmi Goreng Ampela Ati",
+            "price": 20000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 13,
+            "name": "Bakmi Goreng Seafood",
+            "price": 20000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 14,
+            "name": "Bakmi Goreng Komplit",
+            "price": 25000,
+            "images": "/images/bakmi-goreng.jpg"
+        },
+
+        {
+            "id": 15,
+            "name": "Capcay",
+            "price": 15000,
+            "images": "/images/capcay.jpg"
+        },
+
+        {
+            "id": 16,
+            "name": "Capcay Ampela Ati",
+            "price": 20000,
+            "images": "/images/capcay.jpg"
+        },
+
+        {
+            "id": 17,
+            "name": "Capcay Seafood",
+            "price": 20000,
+            "images": "/images/capcay.jpg"
+        },
+
+        {
+            "id": 18,
+            "name": "Capcay Komplit",
+            "price": 25000,
+            "images": "/images/capcay.jpg"
+        },
+
+        {
+            "id": 19,
+            "name": "Fuyung hay",
+            "price": 15000,
+            "images": "/images/fuyunghay.jpg"
+        }
+    ]
+}
