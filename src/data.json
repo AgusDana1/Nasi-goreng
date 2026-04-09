@@ -7,6 +7,7 @@
             "name": "Nasi Goreng Biasa",
             "price": 13000,
             "images": "/images/nasgor-spesial.jpg",
+            "category": "Makanan",
             "bestSeller": true
         },
 
@@ -15,65 +16,74 @@
             "name": "Nasi Goreng Mawut",
             "price": 14000,
             "images": "/images/nasgor-spesial.jpg",
+            "category": "Makanan",
             "bestSeller": false
         },
 
         {
             "id": 3,
             "name": "Nasi Goreng Bakso",
-            "price": 18000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "category": "Makanan",
+            "price": 18000
         },
 
         {
             "id": 4,
             "name": "Nasi Goreng Sosis",
-            "price": 18000,
             "images": "/images/nasgor-spesial.jpg",
+            "price": 18000,
+            "category": "Makanan",
             "bestSeller": true
         },
 
         {
             "id": 5,
             "name": "Nasi Goreng Bakso + Sosis",
-            "price": 18000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "category": "Makanan",
+            "price": 18000
         },
 
         {
             "id": 6,
             "name": "Nasi Goreng Ampela Ati",
-            "price": 20000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "category": "Makanan",
+            "price": 20000
         },
 
         {
             "id": 7,
             "name": "Nasi Goreng Seafood",
-            "price": 20000,
-            "images": "/images/nasgor-seafood.jpeg"
+            "images": "/images/nasgor-seafood.jpeg",
+            "category": "Makanan",
+            "price": 20000
         },
 
         {
             "id": 8,
             "name": "Nasi Goreng Komplit",
-            "price": 25000,
-            "images": "/images/nasgor-seafood.jpeg"
+            "images": "/images/nasgor-seafood.jpeg",
+            "category": "Makanan",
+            "price": 25000
         },
 
         {
             "id": 9,
             "name": "Bakmi Goreng",
-            "price": 13000,
             "images": "/images/bakmi-goreng.jpg",
+            "category":"Makanan",
+            "price": 13000,
             "bestSeller": true
         },
 
         {
             "id": 10,
             "name": "Bakmi Kuah",
-            "price": 13000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "category": "Makanan",
+            "price": 13000
         },
 
         {
@@ -81,6 +91,7 @@
             "name": "Bakmi Goreng Bakso + Sosis",
             "price": 18000,
             "images": "/images/bakmi-goreng.jpg",
+            "category": "Makanan",
             "bestSeller": true
         },
 
@@ -89,6 +100,7 @@
             "name": "Bakmi Goreng Ampela Ati",
             "price": 20000,
             "images": "/images/bakmi-goreng.jpg",
+            "category": "Makanan",
             "bestSeller": false
         },
 
@@ -96,14 +108,16 @@
             "id": 13,
             "name": "Bakmi Goreng Seafood",
             "price": 20000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "category": "Makanan"
         },
 
         {
             "id": 14,
             "name": "Bakmi Goreng Komplit",
             "price": 25000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "category": "Makanan"
         },
 
         {
@@ -111,6 +125,7 @@
             "name": "Capcay",
             "price": 15000,
             "images": "/images/capcay.jpg",
+            "category": "Makanan",
             "bestSeller": true
         },
 
@@ -118,21 +133,24 @@
             "id": 16,
             "name": "Capcay Ampela Ati",
             "price": 20000,
-            "images": "/images/capcay.jpg"
+            "images": "/images/capcay.jpg",
+            "category": "Makanan"
         },
 
         {
             "id": 17,
             "name": "Capcay Seafood",
             "price": 20000,
-            "images": "/images/capcay.jpg"
+            "images": "/images/capcay.jpg",
+            "category": "Makanan"
         },
 
         {
             "id": 18,
             "name": "Capcay Komplit",
             "price": 25000,
-            "images": "/images/capcay.jpg"
+            "images": "/images/capcay.jpg",
+            "category": "Makanan"
         },
 
         {
@@ -140,7 +158,16 @@
             "name": "Fuyung hay",
             "price": 15000,
             "images": "/images/fuyunghay.jpg",
+            "category": "Makanan",
             "bestSeller": true
+        },
+
+        {
+            "id": 20,
+            "name": "Es Teh",
+            "price": 5000,
+            "images": "/images/esteh1.jpeg",
+            "category": "Minuman"
         }
     ]
 }
