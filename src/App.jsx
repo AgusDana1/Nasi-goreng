@@ -27,6 +27,11 @@ export default function App() {
     ),
   ];
 
+  // ================= BEST SELLER ==============
+  const bestSellerMenu = data.menu.filter(
+      (item) => item.bestSeller
+    );
+
   // ================= FILTER =================
   const filteredMenu = data.menu.filter((item) => {
     const matchSearch = item.name
@@ -143,12 +148,13 @@ export default function App() {
 
       {/* NAVBAR */}
       <div className="fixed top-4 left-0 w-full z-50 px-4">
-        <div className="backdrop-blur-xl bg-white/10 border border-white/10 rounded-2xl px-4 py-3 flex justify-between items-center">
+        <div className="relative z-50 backdrop-blur-xl bg-white/10 border border-white/10 rounded-2xl px-4 py-3 flex justify-between items-center">
 
           <h1 className="font-bold">{data.businessName}</h1>
 
           <div className="flex items-center gap-3">
 
+            {/* SEARCH ICON MOBILE */}
             <button
               className="md:hidden"
               onClick={() =>
@@ -158,6 +164,7 @@ export default function App() {
               <Search />
             </button>
 
+            {/* SEARCH DESKTOP */}
             <div className="hidden md:block">
               <input
                 type="text"
@@ -170,6 +177,7 @@ export default function App() {
               />
             </div>
 
+            {/* HAMBURGER */}
             <button
               className="md:hidden"
               onClick={() => setOpen(!open)}
@@ -178,6 +186,46 @@ export default function App() {
             </button>
           </div>
         </div>
+
+        {/* SEARCH MOBILE */}
+        <AnimatePresence>
+          {showSearchMobile && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mx-4 mt-2 bg-white/10 backdrop-blur-xl p-3 rounded-xl relative z-50"
+            >
+              <input
+                autoFocus
+                type="text"
+                placeholder="Cari menu..."
+                value={search}
+                onChange={(e) =>
+                  setSearch(e.target.value)
+                }
+                className="w-full bg-transparent outline-none text-white"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* HAMBURGER MENU */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mx-4 mt-2 backdrop-blur-xl border border-white/10 text-white text-black rounded-xl p-4 shadow-lg md:hidden relative z-50"
+            >
+              <div className="flex flex-col gap-3">
+                <a href="#" onClick={() => setOpen(false)}>Home</a>
+                <a href="#menu" onClick={() => setOpen(false)}>Menu</a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="h-24"></div>
@@ -204,17 +252,43 @@ export default function App() {
         </div>
       </section>
 
+      {/* BEST SELLER MENU */}
+      {bestSellerMenu.length > 0 && (
+        <section className="px-4 mb-4">
+          <h2 className="font-bold mb-2">Best Seller</h2>
+
+          <div className="flex gap-3 overflow-x-auto pb-2">
+            {bestSellerMenu.map((item) => (
+              <div key={`best-${item.id}`} className="min-w-[140px] bg-white/10 rounded-2xl p-2">
+                <img src={item.images} className="h-20 w-full object-cover rounded-lg" />
+
+                <p className="text-sm mt-1">{item.name}</p>
+                <p className="text-xs opacity-70">
+                  {formatRupiah(item.price)}
+                </p>
+
+                <div className="flex justify-end mt-1">
+                  <button onClick={() => addCart(item)} className="w-9 h-9 flex items-center justify-center bg-white text-black rounded-full">
+                    <Plus size={18} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* CATEGORY */}
       <section className="px-4 mb-4">
-        <div className="flex gap-3 overflow-x-auto pb-2">
-          {categories.map((cat, index) => (
+        <div className="flex gap-3 overflow-x-auto">
+          {categories.map((cat, i) => (
             <button
-              key={`${cat}-${index}`}
+              key={`${cat}-${i}`}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm whitespace-nowrap font-medium transition ${
+              className={`px-4 py-2 rounded-full ${
                 activeCategory === cat
                   ? "bg-white text-black"
-                  : "bg-white/10 border border-white/20"
+                  : "bg-white/10"
               }`}
             >
               {cat}
@@ -224,11 +298,11 @@ export default function App() {
       </section>
 
       {/* MENU */}
-      <section className="px-4">
+      <section id="menu" className="px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {loading
             ? Array.from({ length: 6 }).map((_, i) => (
-                <SkeletonCard key={`s-${i}`} />
+                <SkeletonCard key={i} />
               ))
             : filteredMenu.map((item) => (
                 <motion.div
@@ -243,16 +317,13 @@ export default function App() {
 
                   <div className="p-3">
                     <h3>{item.name}</h3>
-                    <p className="text-sm">
-                      {formatRupiah(item.price)}
-                    </p>
+                    <p>{formatRupiah(item.price)}</p>
 
-                    <button
-                      onClick={() => addCart(item)}
-                      className="mt-2 rounded-full bg-white text-black rounded-lg py-2 px-4"
-                    >
-                      <Plus />
-                    </button>
+                    <div className="flex justify-end mt-2">
+                      <button onClick={() => addCart(item)} className="w-9 h-9 flex items-center justify-center bg-white text-black rounded-full">
+                    <Plus size={18} />
+                  </button>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -261,39 +332,31 @@ export default function App() {
 
       {/* CART */}
       {cart.length > 0 && (
-        <div className="fixed bottom-0 left-0 w-full bg-black/80 p-4">
+        <div className="fixed bottom-0 w-full bg-black/80 p-4">
 
           <p onClick={() => setShowCartDetail(!showCartDetail)}>
             {cartSummary()}
           </p>
 
-          <p className="font-bold">
-            {formatRupiah(totalPrice)}
-          </p>
+          <p>{formatRupiah(totalPrice)}</p>
 
-          {/* DETAIL CART */}
           <AnimatePresence>
             {showCartDetail && (
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "auto" }}
-                exit={{ height: 0 }}
-                className="overflow-hidden mt-2"
-              >
+              <motion.div>
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className="flex justify-between py-1"
+                    className="flex justify-between"
                   >
                     <span>{item.name}</span>
 
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2">
                       <button
                         onClick={() =>
                           updateQty(item.id, "dec")
                         }
                       >
-                        <Minus size={16} />
+                        <Minus />
                       </button>
 
                       <span>{item.qty}</span>
@@ -303,7 +366,7 @@ export default function App() {
                           updateQty(item.id, "inc")
                         }
                       >
-                        <Plus size={16} />
+                        <Plus />
                       </button>
                     </div>
                   </div>
@@ -315,7 +378,7 @@ export default function App() {
           <button
             onClick={goToWa}
             disabled={!isOpenNow()}
-            className="w-full mt-2 py-3 rounded-xl bg-green-400 text-black font-bold"
+            className="w-full mt-2 bg-green-400 text-black py-2 rounded-lg"
           >
             {isOpenNow() ? "Pesan Sekarang" : "Tutup"}
           </button>

@@ -167,7 +167,8 @@
             "name": "Es Teh",
             "price": 5000,
             "images": "/images/esteh1.jpeg",
-            "category": "Minuman"
+            "category": "Minuman",
+            "bestSeller":true
         }
     ]
 }
