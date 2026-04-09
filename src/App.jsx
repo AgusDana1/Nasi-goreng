@@ -84,6 +84,33 @@ export default function App()
     }).format(number);
   }
 
+  // logika untuk memberitahu apakah toko buka sekarang atau belum
+  const isOpenNow = () => {
+    if (!data?.openHours) return true;
+
+    const parts = data.openHours.split("-");
+    if (parts.length < 2) return true;
+
+    const start = parts[0].trim();
+    const end = parts[1].trim();
+
+    const [sH, sM] = start.split(":").map(Number);
+    const [eH, eM] = end.split(":").map(Number);
+
+    if (
+      [sH, sM, eH, eM].some((n) => isNaN(n))
+    ) return true;
+
+    const now = new Date();
+
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const startTime = sH * 60 + sM;
+    const endTime = eH * 60 + eM;
+
+    return currentMinutes >= startTime && current <= endTime;
+  }
+
   // Logic untuk tampilan web
   return (
     <>
@@ -128,7 +155,26 @@ export default function App()
       </div>
 
       {/* SPACER */}
-      <div className="h-24"></div>
+      <div className="h-15"></div>
+
+      {/* Info Bisnis */}
+      <section className="w-full mx-auto px-4 mb-6 mt-20">
+        <div className="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
+          {/* Jam buka */}
+          <p className="text-sm text-gray-600">
+            🕒 Jam Buka: <span className="font-semibold">{data.openHours}</span>
+          </p>
+
+          {/* STATUS */}
+            <p
+              className={`text-sm font-semibold ${
+                isOpenNow() ? "text-green-600" : "text-red-500"
+              }`}
+            >
+              {isOpenNow() ? "🟢 Buka" : "🔴 Tutup"}
+            </p>
+        </div>
+      </section>
 
       {/* MENU */}
       <section id="menu" className="w-full mx-auto px-4">
@@ -141,8 +187,15 @@ export default function App()
               className="bg-white rounded-2xl shadow p-4 flex flex-col justify-between hover:scale-105 transition"
             >
               {/* IMAGE */}
-              <div className="h-24 bg-gray-100 rounded-xl mb-3">
+              <div className="h-24 bg-gray-100 rounded-xl mb-3 relative">
                 <img src={item.images} alt={item.name} className="h-24 w-full object-cover rounded-xl mb-3 hover:scale-105 transition-all" />
+
+                {/* Best Seller */}
+                {item.bestSeller && (
+                  <span className="absolute top-2 left-2 bg-white text-xs px-2 py-1 rounded-lg font-semibold">
+                    ⭐ Best Seller
+                  </span>
+                )}
               </div>
 
               {/* INFO */}
@@ -217,11 +270,18 @@ export default function App()
           )}
 
           <button
-            onClick={goToWa}
-            className="w-full mt-2 bg-[#1A3263] text-white py-3 rounded-lg"
-          >
-            Pesan Sekarang
-          </button>
+              onClick={goToWa}
+              disabled={!isOpenNow()}
+              className={`w-full mt-2 py-3 rounded-lg text-white ${
+                isOpenNow()
+                  ? "bg-[#1A3263]"
+                  : "bg-gray-400"
+              }`}
+            >
+              {isOpenNow()
+                ? "Pesan Sekarang"
+                : "Toko Tutup"}
+            </button>
         </div>
       )}
     </div>

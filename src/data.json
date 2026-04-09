@@ -1,18 +1,21 @@
 {
     "businessName": "Warung Arema",
+    "openHours": "13.00-21.00",
     "menu": [
         {
             "id": 1,
             "name": "Nasi Goreng Biasa",
             "price": 13000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "bestSeller": true
         },
 
         {
             "id": 2,
             "name": "Nasi Goreng Mawut",
             "price": 14000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "bestSeller": false
         },
 
         {
@@ -26,7 +29,8 @@
             "id": 4,
             "name": "Nasi Goreng Sosis",
             "price": 18000,
-            "images": "/images/nasgor-spesial.jpg"
+            "images": "/images/nasgor-spesial.jpg",
+            "bestSeller": true
         },
 
         {
@@ -61,7 +65,8 @@
             "id": 9,
             "name": "Bakmi Goreng",
             "price": 13000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "bestSeller": true
         },
 
         {
@@ -75,14 +80,16 @@
             "id": 11,
             "name": "Bakmi Goreng Bakso + Sosis",
             "price": 18000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "bestSeller": true
         },
 
         {
             "id": 12,
             "name": "Bakmi Goreng Ampela Ati",
             "price": 20000,
-            "images": "/images/bakmi-goreng.jpg"
+            "images": "/images/bakmi-goreng.jpg",
+            "bestSeller": false
         },
 
         {
@@ -103,7 +110,8 @@
             "id": 15,
             "name": "Capcay",
             "price": 15000,
-            "images": "/images/capcay.jpg"
+            "images": "/images/capcay.jpg",
+            "bestSeller": true
         },
 
         {
@@ -131,7 +139,8 @@
             "id": 19,
             "name": "Fuyung hay",
             "price": 15000,
-            "images": "/images/fuyunghay.jpg"
+            "images": "/images/fuyunghay.jpg",
+            "bestSeller": true
         }
     ]
 }
