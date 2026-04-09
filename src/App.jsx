@@ -262,14 +262,14 @@ export default function App() {
               <div key={`best-${item.id}`} className="min-w-[140px] bg-white/10 rounded-2xl p-2">
                 <img src={item.images} className="h-20 w-full object-cover rounded-lg" />
 
-                <p className="text-sm mt-1">{item.name}</p>
+                <p className="text-xs mt-1">{item.name}</p>
                 <p className="text-xs opacity-70">
                   {formatRupiah(item.price)}
                 </p>
 
                 <div className="flex justify-end mt-1">
-                  <button onClick={() => addCart(item)} className="w-9 h-9 flex items-center justify-center bg-white text-black rounded-full">
-                    <Plus size={18} />
+                  <button onClick={() => addCart(item)} className="w-full flex items-center justify-center bg-white text-black rounded-md p-2 mt-2">
+                    Tambah
                   </button>
                 </div>
               </div>
@@ -320,8 +320,8 @@ export default function App() {
                     <p>{formatRupiah(item.price)}</p>
 
                     <div className="flex justify-end mt-2">
-                      <button onClick={() => addCart(item)} className="w-9 h-9 flex items-center justify-center bg-white text-black rounded-full">
-                    <Plus size={18} />
+                      <button onClick={() => addCart(item)} className="w-full flex items-center justify-center bg-white text-black p-2 rounded-md">
+                        Tambah
                   </button>
                     </div>
                   </div>

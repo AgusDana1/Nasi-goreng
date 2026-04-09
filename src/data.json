@@ -92,7 +92,7 @@
             "price": 18000,
             "images": "/images/bakmi-goreng.jpg",
             "category": "Makanan",
-            "bestSeller": true
+            "bestSeller": false
         },
 
         {
@@ -109,7 +109,8 @@
             "name": "Bakmi Goreng Seafood",
             "price": 20000,
             "images": "/images/bakmi-goreng.jpg",
-            "category": "Makanan"
+            "category": "Makanan",
+            "bestSeller": true
         },
 
         {
