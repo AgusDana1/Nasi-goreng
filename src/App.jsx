@@ -162,7 +162,7 @@ export default function App()
         <div className="bg-white rounded-2xl shadow p-4 flex flex-col gap-2">
           {/* Jam buka */}
           <p className="text-sm text-gray-600">
-            🕒 Jam Buka: <span className="font-semibold">{data.openHours}</span>
+            🕒 Jam Buka: <span className="font-semibold">{data.openHours} Wita</span>
           </p>
 
           {/* STATUS */}
