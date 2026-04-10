@@ -1,6 +1,6 @@
 {
     "businessName": "Warung Arema",
-    "openHours": "13.00-21.00",
+    "openHours": "13:00-21:00",
     "menu": [
         {
             "id": 1,

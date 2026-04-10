@@ -125,7 +125,11 @@ export default function App() {
 
     if ([sH, sM, eH, eM].some(isNaN)) return true;
 
-    const now = new Date();
+    const now = new Date(
+      new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Makassar",
+      })
+    );
     const current = now.getHours() * 60 + now.getMinutes();
 
     const startTime = sH * 60 + sM;
