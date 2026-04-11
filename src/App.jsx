@@ -230,7 +230,9 @@ export default function App() {
                 darkMode ? "bg-[#111] border-white/5 text-white" : "bg-white border-gray-200 text-black"
               }`}
             >
-              <div className="flex flex-col gap-3">
+              <div className={`flex flex-col gap-3 ${
+                darkMode ? "text-white" : "text-black"
+              }`}>
                 <a href="#" onClick={() => setOpen(false)}>Home</a>
                 <a href="#menu" onClick={() => setOpen(false)}>Menu</a>
               </div>
