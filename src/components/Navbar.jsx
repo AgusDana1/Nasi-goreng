@@ -9,19 +9,19 @@ export default function Navbar({ search, setSearch, businessName }) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* ── Main Bar ── */}
-      <nav className="bg-[#0f0f0f]/95 backdrop-blur-lg border-b border-white/5 px-5 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-6">
+      <nav className="bg-[#0f0f0f]/95 backdrop-blur-lg border-b border-white/5 px-4 py-3 sm:px-5 sm:py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 sm:gap-6">
 
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="w-9 h-9 bg-orange-500 rounded-xl flex items-center justify-center text-lg">
+          <a href="#" className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-orange-500 rounded-xl flex items-center justify-center text-base sm:text-lg">
               🍳
             </div>
             <div>
-              <p className="font-extrabold text-white text-sm leading-tight tracking-tight">
+              <p className="font-extrabold text-white text-xs sm:text-sm leading-tight tracking-tight">
                 {businessName}
               </p>
-              <p className="text-[10px] text-orange-400 font-semibold">
+              <p className="text-[9px] sm:text-[10px] text-orange-400 font-semibold">
                 Masakan Nusantara
               </p>
             </div>
@@ -66,26 +66,26 @@ export default function Navbar({ search, setSearch, businessName }) {
           </div>
 
           {/* Mobile Buttons */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1.5 md:hidden">
             <button
               onClick={() => { setShowSearch(!showSearch); setOpen(false); }}
-              className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
                 showSearch
                   ? "bg-orange-500 border-orange-500 text-white"
                   : "bg-white/5 border-white/10 text-gray-300"
               }`}
             >
-              <Search size={15} />
+              <Search size={13} />
             </button>
             <button
               onClick={() => { setOpen(!open); setShowSearch(false); }}
-              className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
                 open
                   ? "bg-orange-500 border-orange-500 text-white"
                   : "bg-white/5 border-white/10 text-gray-300"
               }`}
             >
-              {open ? <X size={15} /> : <Menu size={15} />}
+              {open ? <X size={14} /> : <Menu size={14} />}
             </button>
           </div>
         </div>
@@ -101,16 +101,16 @@ export default function Navbar({ search, setSearch, businessName }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden bg-[#0f0f0f] border-b border-white/5"
           >
-            <div className="px-5 py-3">
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2.5 focus-within:border-orange-500/50 transition-colors">
-                <Search size={14} className="text-gray-400 flex-shrink-0" />
+            <div className="px-4 py-2.5">
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3.5 py-2 focus-within:border-orange-500/50 transition-colors">
+                <Search size={13} className="text-gray-400 flex-shrink-0" />
                 <input
                   autoFocus
                   type="text"
                   placeholder="Cari menu..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="bg-transparent text-sm text-white placeholder-gray-500 outline-none flex-1"
+                  className="bg-transparent text-xs text-white placeholder-gray-500 outline-none flex-1"
                 />
               </div>
             </div>
@@ -128,26 +128,26 @@ export default function Navbar({ search, setSearch, businessName }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden bg-[#0f0f0f] border-b border-white/5"
           >
-            <div className="px-5 py-4 flex flex-col gap-1">
+            <div className="px-4 py-3 flex flex-col gap-1">
               <a
                 href="#"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 font-medium transition-colors"
+                className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 text-xs sm:text-sm font-medium transition-colors"
               >
                 <span>🏠</span> Beranda
               </a>
               <a
                 href="#menu"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 font-medium transition-colors"
+                className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 text-xs sm:text-sm font-medium transition-colors"
               >
                 <span>🍽️</span> Menu
               </a>
-              <div className="pt-3 mt-2 border-t border-white/5">
+              <div className="pt-2 mt-1 border-t border-white/5">
                 <a
                   href="#menu"
                   onClick={() => setOpen(false)}
-                  className="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 text-center rounded-2xl transition-colors"
+                  className="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 text-center text-xs sm:text-sm rounded-xl transition-colors"
                 >
                   Pesan Sekarang
                 </a>
