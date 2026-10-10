@@ -13,10 +13,10 @@ export default function BestSeller({ items, onAdd }) {
             — Pilihan Terbaik —
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
-            Menu Best Seller 🔥
+            Menu Paling Diminati 🔥
           </h2>
           <p className="text-gray-400 text-sm mt-2">
-            Yang paling banyak dipesan pelanggan kami
+            Nikmat Dan Bergizi
           </p>
         </div>
 

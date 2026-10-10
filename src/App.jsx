@@ -34,7 +34,7 @@ const FEATURES = [
 export default function App() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
 
   const { cart, addCart, updateQty, totalPrice, totalItems } = useCart();
   const phone = import.meta.env.VITE_WA_NUMBER;
@@ -45,7 +45,7 @@ export default function App() {
   }, []);
 
   const categories = [
-    "All",
+    "Semua",
     ...new Set(data.menu.map((item) => item.category).filter(Boolean)),
   ];
 
@@ -54,7 +54,7 @@ export default function App() {
   const filteredMenu = data.menu.filter((item) => {
     const matchSearch = item.name.toLowerCase().includes(search.toLowerCase());
     const matchCategory =
-      activeCategory === "All" || item.category === activeCategory;
+      activeCategory === "Semua" || item.category === activeCategory;
     return matchSearch && matchCategory;
   });
 
@@ -120,13 +120,11 @@ export default function App() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
                   Nusantara
                 </span>{" "}
-                yang Bikin Kangen
               </h1>
 
               {/* Description */}
               <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-                Nasi goreng dan masakan Indonesia lezat, dimasak dengan bahan segar pilihan.
-                Pesan sekarang lewat WhatsApp — mudah dan cepat!
+                Pesan Dan Rasakan Kenikmatannya!
               </p>
 
               {/* CTA Buttons */}

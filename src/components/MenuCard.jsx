@@ -27,10 +27,6 @@ export default function MenuCard({ item, onAdd, cartQty }) {
             🔥 Best Seller
           </span>
         )}
-        {/* Category badge */}
-        <span className="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white text-[9px] font-semibold px-2 py-1 rounded-full">
-          {item.category}
-        </span>
       </div>
 
       {/* ── Content ── */}
